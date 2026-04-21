@@ -3,226 +3,1133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohan Yadav — Frontend Web Developer at Smart Solution Nepal. Building modern, scalable, and responsive web applications.">
   <meta name="google-adsense-account" content="ca-pub-3124028710694591">
-  <title>Portfolio | Mohan Yadav</title>
+  <title>Mohan Yadav | Frontend Web Developer</title>
 
-  <!-- --------- UNICONS & FONTS ---------- -->
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-
-  <!-- --------- FAVICON ---------- -->
+  <!-- Favicon -->
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 
-  <style>
-    a { text-decoration: none; }
-    .message-status {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-    .message-status.success { color: green; }
-    .message-status.error { color: red; }
-  </style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="container">
-    <!-- --------------- HEADER --------------- -->
-    <nav id="header">
-      <div class="nav-logo">
-        <p class="nav-name">MOHAN</p><span>.</span>
-      </div>
-      <div class="nav-menu" id="myNavMenu">
-        <ul class="nav_menu_list">
-          <li class="nav_list"><a href="#home" class="nav-link active-link">Home</a><div class="circle"></div></li>
-          <li class="nav_list"><a href="#about" class="nav-link">About</a><div class="circle"></div></li>
-          <li class="nav_list"><a href="#projects" class="nav-link">Projects</a><div class="circle"></div></li>
-          <li class="nav_list"><a href="#contact" class="nav-link">Contact</a><div class="circle"></div></li>
-        </ul>
-      </div>
-      <div class="nav-button">
-        <a href="cv.pdf" download target="_blank" class="btn">Download CV</a>
-      </div>
-      <div class="nav-menu-btn">
-        <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+  <!-- Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Grid Background -->
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <!-- Logo -->
+          <a href="#home" class="nav-logo">
+            <div class="nav-logo-dot"></div>
+            MOHAN<span class="gradient-text">.</span>
+          </a>
+
+          <!-- Desktop Links -->
+          <div class="nav-links" id="navLinks">
+            <a href="#home" class="active"><i class="uil uil-home-alt"></i> Home</a>
+            <a href="#about"><i class="uil uil-user"></i> About</a>
+            <a href="#skills"><i class="uil uil-layer-group"></i> Skills</a>
+            <a href="#projects"><i class="uil uil-briefcase-alt"></i> Projects</a>
+            <a href="#blogs"><i class="uil uil-newspaper"></i> Blogs</a>
+            <a href="#notes"><i class="uil uil-book-alt"></i> Notes</a>
+            <a href="#gallery"><i class="uil uil-images"></i> Gallery</a>
+            <a href="#contact"><i class="uil uil-envelope"></i> Contact</a>
+          </div>
+
+          <!-- Actions -->
+          <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+              <i class="uil uil-moon" id="themeIcon"></i>
+            </button>
+            <a href="cv.pdf" download class="btn btn-primary btn-sm" style="display:none" id="navCV">
+              <i class="uil uil-download-alt"></i> CV
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
       </div>
     </nav>
 
-    <!-- -------------- MAIN ---------------- -->
-    <main class="wrapper">
-      <!-- -------------- FEATURED BOX ---------------- -->
-      <section class="featured-box" id="home">
-        <div class="featured-text">
-          <div class="featured-text-card"><span>MOHAN YADAV</span></div>
-          <div class="featured-name"><p>I'm <span class="typedText"></span></p></div>
-          <div class="featured-text-info">
-            <p>Frontend developer with a passion for creating visually stunning and user-friendly websites.</p>
-          </div>
-          <div class="featured-text-btn">
-            <button class="btn blue-btn"><a href="#contact">Hire Me</a></button>
-            <button class="btn"><a href="cv.pdf" download target="_blank">Download CV</a></button>
-          </div>
-          <div class="social-links">
-            <a href="https://www.facebook.com/Mohanyadav2064"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.tiktok.com/@mohanyadav2064"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/mohan_yadav2064/"><i class="fab fa-instagram"></i></a>
-            <a href="www.linkedin.com/in/mohanyadav2064"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/ymohan5000"><i class="fa-brands fa-github"></i></a>
-            <a href="https://x.com/MohanYadav2064"><i class="fa-brands fa-square-x-twitter"></i></a>
-          </div>
-        </div>
-        <div class="featured-image">
-          <div class="image"><img src="ki.png" alt="avatar"></div>
-        </div>
-      </section>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#home" onclick="closeMobileNav()"><i class="uil uil-home-alt"></i> Home</a>
+      <a href="#about" onclick="closeMobileNav()"><i class="uil uil-user"></i> About</a>
+      <a href="#skills" onclick="closeMobileNav()"><i class="uil uil-layer-group"></i> Skills</a>
+      <a href="#projects" onclick="closeMobileNav()"><i class="uil uil-briefcase-alt"></i> Projects</a>
+      <a href="#blogs" onclick="closeMobileNav()"><i class="uil uil-newspaper"></i> Blogs</a>
+      <a href="#notes" onclick="closeMobileNav()"><i class="uil uil-book-alt"></i> Notes</a>
+      <a href="#gallery" onclick="closeMobileNav()"><i class="uil uil-images"></i> Gallery</a>
+      <a href="#contact" onclick="closeMobileNav()"><i class="uil uil-envelope"></i> Contact</a>
+      <div class="mobile-nav-footer">
+        <a href="cv.pdf" download class="btn btn-primary btn-sm" onclick="closeMobileNav()">
+          <i class="uil uil-download-alt"></i> Download CV
+        </a>
+      </div>
+    </div>
+  </header>
 
-      <!-- -------------- ABOUT ---------------- -->
-      <section class="section" id="about">
-        <div class="top-header"><h1>About Me</h1></div>
-        <div class="row">
-          <div class="col">
-            <div class="about-info">
-              <h3>My introduction</h3>
-              <p>I am well-versed in HTML, CSS, JavaScript, and modern frameworks for interactive and responsive design.</p>
-              <div class="about-btn">
-                <a href="cv.pdf" download target="_blank" class="btn">Download CV</a>
+  <main>
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section id="home">
+      <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-inner">
+          <!-- Content -->
+          <div class="hero-content">
+            <div class="hero-badge fade-in">
+              <span class="hero-badge-dot"></span>
+              Available for freelance work
+            </div>
+
+            <h1 class="hero-title fade-in fade-in-delay-1">
+              Hi, I'm Mohan<br>
+              <span class="hero-typed" id="heroTyped"></span>
+            </h1>
+
+            <p class="hero-sub fade-in fade-in-delay-2">
+              Building modern, scalable, and responsive web applications that deliver exceptional user experiences at Smart Solution Nepal.
+            </p>
+
+            <div class="hero-actions fade-in fade-in-delay-3">
+              <a href="#contact" class="btn btn-primary btn-lg">
+                <i class="uil uil-message"></i> Hire Me
+              </a>
+              <a href="#projects" class="btn btn-secondary btn-lg">
+                <i class="uil uil-eye"></i> View Projects
+              </a>
+              <a href="cv.pdf" download class="btn btn-ghost btn-lg">
+                <i class="uil uil-download-alt"></i> Download CV
+              </a>
+            </div>
+
+            <div class="hero-stats fade-in fade-in-delay-4">
+              <div class="hero-stat">
+                <span class="hero-stat-num" data-count="2">0</span>
+                <span class="hero-stat-label">Years Exp.</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat-num" data-count="15">0</span>
+                <span class="hero-stat-label">Projects</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat-num" data-count="25">0</span>
+                <span class="hero-stat-label">Clients</span>
+              </div>
+            </div>
+
+            <div class="hero-social fade-in fade-in-delay-4" style="margin-top:32px;">
+              <a href="https://www.facebook.com/Mohanyadav2064" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.tiktok.com/@mohanyadav2064" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://www.instagram.com/mohan_yadav2064/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/mohanyadav2064" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/ymohan5000" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://x.com/MohanYadav2064" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div class="hero-image-wrap fade-in fade-in-delay-2">
+            <div class="hero-img-ring">
+              <div class="hero-img-inner">
+                <img src="ki.png" alt="Mohan Yadav — Frontend Developer">
+              </div>
+              <div class="hero-img-badge hero-img-badge-1">
+                <i class="uil uil-code-branch" style="color:var(--accent);"></i>
+                Frontend Dev
+              </div>
+              <div class="hero-img-badge hero-img-badge-2">
+                <i class="uil uil-map-marker" style="color:var(--accent-2);"></i>
+                Nepal 🇳🇵
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="skills-box">
-              <div class="skills-header"><h3>Frontend</h3></div>
-              <div class="skills-list"><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JavaScript</span></div>
-            </div>
-            <div class="skills-box">
-              <div class="skills-header"><h3>Backend</h3></div>
-              <div class="skills-list"><span>PHP</span><span>Java</span><span>Python</span><span>C++</span></div>
-            </div>
-            <div class="skills-box">
-              <div class="skills-header"><h3>Database</h3></div>
-              <div class="skills-list"><span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span></div>
-            </div>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- -------------- PROJECTS ---------------- -->
-      <section class="section" id="projects">
-        <div class="top-header"><h1>Projects</h1></div>
-        <div class="project-container">
-          <div class="project-box"><i class="uil uil-briefcase-alt"></i><h3>Completed</h3><label>15+ Projects</label></div>
-          <div class="project-box"><i class="uil uil-users-alt"></i><h3>Clients</h3><label>25+ Happy Clients</label></div>
-          <div class="project-box"><i class="uil uil-award"></i><h3>Experience</h3><label>2+ Years</label></div>
+    <!-- ============================================================
+         ABOUT
+    ============================================================ -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag"><i class="uil uil-user-circle"></i> About Me</div>
+          <h2>Who I <span class="gradient-text">Am</span></h2>
+          <p>A passionate frontend developer crafting beautiful digital experiences</p>
         </div>
-      </section>
 
-      <!-- -------------- CONTACT ---------------- -->
-      <section class="section" id="contact">
-        <div class="top-header">
-          <h1>Get in Touch</h1>
-          <span>Have a project? Let's talk!</span>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="contact-info">
-              <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
-              <p><i class="uil uil-envelope"></i> Email: ymohan5000@gmail.com</p>
-              <p><i class="uil uil-phone"></i> Mobile: +977 9811639830</p>
+        <div class="about-grid">
+          <!-- Image Column -->
+          <div class="about-img-wrap fade-in fade-in-delay-1">
+            <div class="about-img-card">
+              <img src="ki.png" alt="Mohan Yadav">
+            </div>
+            <div class="about-exp-badge">
+              <div class="num">2+</div>
+              <div class="label">Years of<br>Experience</div>
             </div>
           </div>
 
-          <div class="col">
-            <form id="contact-form">
-              <div class="form-control">
-                <div class="form-inputs">
-                  <input type="text" id="name" class="input-field" placeholder="Your Name" required>
-                  <input type="email" id="email" class="input-field" placeholder="Your Email" required>
+          <!-- Content Column -->
+          <div class="about-content fade-in fade-in-delay-2">
+            <div class="section-tag" style="margin-bottom:16px;"><i class="uil uil-building"></i> Smart Solution Nepal</div>
+            <h3>Frontend Web Developer<br><span class="gradient-text">& UI/UX Enthusiast</span></h3>
+            <p>
+              I'm Mohan Yadav, a Frontend Web Developer at Smart Solution Nepal with 2+ years of experience building modern, scalable, and user-centric web applications. I specialize in creating visually stunning interfaces that blend performance with elegant design.
+            </p>
+            <p>
+              My passion for frontend development drives me to stay current with the latest technologies and best practices, ensuring every project I build delivers an exceptional user experience across all devices.
+            </p>
+
+            <div class="about-items">
+              <div class="about-item">
+                <div class="about-item-icon"><i class="uil uil-briefcase-alt"></i></div>
+                <div class="about-item-text">
+                  <strong>Current Role</strong>
+                  <span>Frontend Developer @ Smart Solution Nepal</span>
                 </div>
-                <div class="text-area">
-                  <textarea id="message" placeholder="Your Message" required></textarea>
-                </div>
-                <div class="form-button">
-                  <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
-                </div>
-                <p id="statusMessage" class="message-status"></p>
               </div>
+              <div class="about-item">
+                <div class="about-item-icon"><i class="uil uil-graduation-cap"></i></div>
+                <div class="about-item-text">
+                  <strong>Education</strong>
+                  <span>BSc CSIT — Computer Science</span>
+                </div>
+              </div>
+              <div class="about-item">
+                <div class="about-item-icon"><i class="uil uil-map-marker"></i></div>
+                <div class="about-item-text">
+                  <strong>Location</strong>
+                  <span>Nepal 🇳🇵</span>
+                </div>
+              </div>
+              <div class="about-item">
+                <div class="about-item-icon"><i class="uil uil-envelope"></i></div>
+                <div class="about-item-text">
+                  <strong>Email</strong>
+                  <span>ymohan5000@gmail.com</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-actions">
+              <a href="cv.pdf" download class="btn btn-primary">
+                <i class="uil uil-download-alt"></i> Download CV
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <i class="uil uil-message"></i> Let's Talk
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS
+    ============================================================ -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag"><i class="uil uil-layer-group"></i> My Skills</div>
+          <h2>Tools & <span class="gradient-text">Technologies</span></h2>
+          <p>Technologies I use to bring ideas to life</p>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Cards generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS
+    ============================================================ -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag"><i class="uil uil-briefcase-alt"></i> My Work</div>
+          <h2>Featured <span class="gradient-text">Projects</span></h2>
+          <p>A collection of projects built with passion and precision</p>
+        </div>
+
+        <!-- Filter -->
+        <div class="projects-filter fade-in">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="react">React</button>
+          <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
+          <button class="filter-btn" data-filter="javascript">JavaScript</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Cards generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOGS
+    ============================================================ -->
+    <section id="blogs">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag"><i class="uil uil-newspaper"></i> Blog</div>
+          <h2>Latest <span class="gradient-text">Articles</span></h2>
+          <p>Thoughts, tutorials, and insights on frontend development</p>
+        </div>
+        <div class="blogs-grid" id="blogsGrid">
+          <!-- Cards generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NOTES
+    ============================================================ -->
+    <section id="notes">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag"><i class="uil uil-book-alt"></i> Notes</div>
+          <h2>Study <span class="gradient-text">Resources</span></h2>
+          <p>Curated notes and PDFs you can download for free</p>
+        </div>
+
+        <!-- Filter -->
+        <div class="projects-filter fade-in" id="notesFilter">
+          <button class="filter-btn active" data-nfilter="all">All</button>
+          <button class="filter-btn" data-nfilter="html-css">HTML/CSS</button>
+          <button class="filter-btn" data-nfilter="javascript">JavaScript</button>
+          <button class="filter-btn" data-nfilter="react">React</button>
+          <button class="filter-btn" data-nfilter="git">Git</button>
+        </div>
+
+        <div class="notes-grid" id="notesGrid">
+          <!-- Cards generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GALLERY
+    ============================================================ -->
+    <section id="gallery">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag"><i class="uil uil-images"></i> Gallery</div>
+          <h2>Visual <span class="gradient-text">Journey</span></h2>
+          <p>Snapshots from my work and creative process</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Items generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <i class="uil uil-times"></i>
+      </button>
+      <img src="" alt="Gallery image" id="lightboxImg">
+    </div>
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag"><i class="uil uil-envelope"></i> Contact</div>
+          <h2>Let's Work <span class="gradient-text">Together</span></h2>
+          <p>Have a project in mind? I'd love to hear about it.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info -->
+          <div class="contact-info fade-in fade-in-delay-1">
+            <h3>Get in Touch</h3>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.</p>
+
+            <div class="contact-items">
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="uil uil-envelope"></i></div>
+                <div>
+                  <div class="contact-item-label">Email</div>
+                  <div class="contact-item-value">ymohan5000@gmail.com</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+                <div>
+                  <div class="contact-item-label">WhatsApp</div>
+                  <div class="contact-item-value">+977 9811639830</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <div class="contact-item-label">Location</div>
+                  <div class="contact-item-value">Nepal 🇳🇵</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="uil uil-globe"></i></div>
+                <div>
+                  <div class="contact-item-label">Portfolio</div>
+                  <div class="contact-item-value">yadavmohan.info.np</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-social">
+              <a href="https://www.facebook.com/Mohanyadav2064" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/mohan_yadav2064/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://github.com/ymohan5000" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/mohanyadav2064" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://x.com/MohanYadav2064" target="_blank" rel="noopener" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="contact-form-card fade-in fade-in-delay-2">
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="inputName">Your Name</label>
+                  <input type="text" id="inputName" class="form-input" placeholder="Mohan Yadav" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="inputEmail">Email Address</label>
+                  <input type="email" id="inputEmail" class="form-input" placeholder="hello@example.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inputSubject">Subject</label>
+                <input type="text" id="inputSubject" class="form-input" placeholder="Project Inquiry">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inputMessage">Message</label>
+                <textarea id="inputMessage" class="form-textarea" placeholder="Tell me about your project..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;padding:16px;">
+                <i class="fab fa-whatsapp"></i> Send via WhatsApp
+              </button>
+
+              <div class="form-status" id="formStatus"></div>
             </form>
           </div>
         </div>
-      </section>
-    </main>
-
-    <!-- --------------- FOOTER --------------- -->
-    <footer>
-      <div class="top-footer"><p>MOHAN.</p></div>
-      <div class="middle-footer">
-        <ul class="footer-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
       </div>
-      <div class="social-links">
-        <a href="https://www.facebook.com/Mohanyadav2064"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/mohan_yadav2064/"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/ymohan5000"><i class="fa-brands fa-github"></i></a>
+    </section>
+  </main>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/9779811639830" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="uil uil-arrow-up"></i>
+  </button>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom:12px;">
+            <div class="nav-logo-dot"></div>
+            MOHAN<span class="gradient-text">.</span>
+          </div>
+          <p>Frontend Web Developer at Smart Solution Nepal. Building modern, scalable, and beautiful web applications.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/Mohanyadav2064" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/mohan_yadav2064/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/ymohan5000" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mohanyadav2064" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/MohanYadav2064" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Content</h4>
+          <ul>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#notes">Notes</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ymohan5000@gmail.com">ymohan5000@gmail.com</a></li>
+            <li><a href="https://wa.me/9779811639830">+977 9811639830</a></li>
+            <li><a href="https://www.yadavmohan.info.np" target="_blank">yadavmohan.info.np</a></li>
+            <li><a href="cv.pdf" download>Download CV</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="bottom-footer">
-        <p>© 2025 <a href="#home">Mohan Yadav</a> — All Rights Reserved.</p>
+
+      <div class="footer-bottom">
+        <p>© 2025 <a href="https://www.yadavmohan.info.np" target="_blank">Mohan Yadav</a>. All rights reserved.</p>
+        <p>Built with <span style="color:#ef4444;">♥</span> in Nepal 🇳🇵</p>
       </div>
-    </footer>
-  </div>
-
-  <!-- JS Libraries -->
-  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-  <script>
-    // Typed.js
-    var typed = new Typed(".typedText", {
-      strings: ["Frontend Developer", "Web Designer", "Tech Enthusiast"],
-      typeSpeed: 70,
-      backSpeed: 50,
-      loop: true
-    });
-
-    // EmailJS Initialization
-    (function() {
-      emailjs.init("DbJZ4AZwSRY7XfTul"); // Your Public Key
-    })();
-
-    // Form Submit
-    const form = document.getElementById("contact-form");
-    const statusMsg = document.getElementById("statusMessage");
-
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const params = {
-        from_name: document.getElementById("name").value,
-        from_email: document.getElementById("email").value,
-        message: document.getElementById("message").value
-      };
-
-      emailjs.send("service_a0oz2ma", "template_45bg55d", params)
-      .then(() => {
-        statusMsg.textContent = "✅ Message sent successfully!";
-        statusMsg.className = "message-status success";
-        form.reset();
-      }, (error) => {
-        console.error(error);
-        statusMsg.textContent = "❌ Failed to send message. Try again!";
-        statusMsg.className = "message-status error";
-      });
-    });
-  </script>
+    </div>
+  </footer>
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3124028710694591" crossorigin="anonymous"></script>
+
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <!-- ============================================================
+       MAIN JS
+  ============================================================ -->
+  <script>
+  // ===================== DATA =====================
+
+  const SKILLS = [
+    { icon: '🌐', name: 'HTML5', level: 'Expert', pct: 95 },
+    { icon: '🎨', name: 'CSS3', level: 'Expert', pct: 92 },
+    { icon: '⚡', name: 'JavaScript', level: 'Advanced', pct: 85 },
+    { icon: '⚛️', name: 'React.js', level: 'Advanced', pct: 80 },
+    { icon: '🔥', name: 'Vite', level: 'Intermediate', pct: 75 },
+    { icon: '💨', name: 'Tailwind CSS', level: 'Advanced', pct: 88 },
+    { icon: '🅱️', name: 'Bootstrap', level: 'Expert', pct: 90 },
+    { icon: '🐙', name: 'Git & GitHub', level: 'Advanced', pct: 82 },
+    { icon: '🎯', name: 'UI/UX Design', level: 'Intermediate', pct: 70 },
+    { icon: '📱', name: 'Responsive Design', level: 'Expert', pct: 93 },
+    { icon: '🖥️', name: 'PHP', level: 'Intermediate', pct: 65 },
+    { icon: '🗃️', name: 'MySQL', level: 'Intermediate', pct: 68 },
+  ];
+
+  const PROJECTS = [
+    {
+      title: 'Smart Solution Nepal',
+      desc: 'Official company website for Smart Solution Nepal featuring services, portfolio, and contact sections.',
+      tags: ['HTML', 'CSS', 'JS'],
+      category: 'html-css',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Portfolio Website',
+      desc: 'Modern SaaS-style portfolio showcasing my skills, projects, and professional journey.',
+      tags: ['HTML', 'CSS', 'JS'],
+      category: 'html-css',
+      demo: 'https://www.yadavmohan.info.np',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'React Dashboard',
+      desc: 'Admin dashboard with dynamic charts, tables, and real-time data visualization built with React.',
+      tags: ['React', 'Tailwind', 'Vite'],
+      category: 'react',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'E-Commerce UI',
+      desc: 'Complete e-commerce frontend with product listing, cart, and checkout flow.',
+      tags: ['React', 'CSS', 'JS'],
+      category: 'react',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Weather App',
+      desc: 'Real-time weather application using OpenWeather API with beautiful animated UI.',
+      tags: ['JavaScript', 'API', 'CSS'],
+      category: 'javascript',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Quiz App',
+      desc: 'Interactive quiz application with timer, score tracking, and multiple categories.',
+      tags: ['JavaScript', 'HTML', 'CSS'],
+      category: 'javascript',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'School Management System',
+      desc: 'Comprehensive school management system with student records, attendance, and grading.',
+      tags: ['PHP', 'MySQL', 'Bootstrap'],
+      category: 'fullstack',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Restaurant Website',
+      desc: 'Modern restaurant website with menu, reservations, and online ordering integration.',
+      tags: ['HTML', 'CSS', 'JS'],
+      category: 'html-css',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Blog Platform',
+      desc: 'Full-featured blog platform with categories, tags, comments, and admin panel.',
+      tags: ['PHP', 'MySQL', 'JS'],
+      category: 'fullstack',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Task Manager',
+      desc: 'Kanban-style task manager with drag-and-drop, priorities, and team collaboration.',
+      tags: ['React', 'Tailwind', 'JS'],
+      category: 'react',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Expense Tracker',
+      desc: 'Personal finance tracker with budgeting, charts, and category management.',
+      tags: ['JavaScript', 'LocalStorage', 'CSS'],
+      category: 'javascript',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Landing Page Pack',
+      desc: 'Collection of 5 high-converting SaaS landing page templates with modern design.',
+      tags: ['HTML', 'CSS', 'JS'],
+      category: 'html-css',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Hospital Website',
+      desc: 'Hospital management website with doctor profiles, appointment booking, and services.',
+      tags: ['HTML', 'CSS', 'PHP'],
+      category: 'fullstack',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'News Portal',
+      desc: 'News portal with categories, search, and dynamic content management system.',
+      tags: ['PHP', 'MySQL', 'Bootstrap'],
+      category: 'fullstack',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+    {
+      title: 'Travel Agency Site',
+      desc: 'Travel agency website with tour packages, booking form, and gallery section.',
+      tags: ['HTML', 'CSS', 'JS'],
+      category: 'html-css',
+      demo: '#',
+      github: 'https://github.com/ymohan5000',
+    },
+  ];
+
+  const BLOGS = [
+    {
+      title: 'Getting Started with React.js in 2025',
+      excerpt: 'A comprehensive guide to starting your React journey — from setup with Vite to building your first component.',
+      category: 'React',
+      date: 'Apr 10, 2025',
+      readTime: '8 min read',
+      color: '#06b6d4',
+    },
+    {
+      title: 'Mastering CSS Grid & Flexbox',
+      excerpt: 'Deep dive into CSS layout systems — when to use Grid vs Flexbox and how to combine both for complex layouts.',
+      category: 'CSS',
+      date: 'Mar 22, 2025',
+      readTime: '6 min read',
+      color: '#7c3aed',
+    },
+    {
+      title: 'JavaScript ES2024 — New Features',
+      excerpt: 'Explore the latest JavaScript features including Array grouping, Promise.withResolvers, and more.',
+      category: 'JavaScript',
+      date: 'Mar 5, 2025',
+      readTime: '7 min read',
+      color: '#f59e0b',
+    },
+    {
+      title: 'Tailwind CSS Best Practices',
+      excerpt: 'How to organize your Tailwind classes, create reusable components, and avoid common pitfalls.',
+      category: 'CSS',
+      date: 'Feb 18, 2025',
+      readTime: '5 min read',
+      color: '#10b981',
+    },
+    {
+      title: 'Building a Portfolio That Gets Hired',
+      excerpt: 'What recruiters look for in a developer portfolio and how to structure yours to stand out.',
+      category: 'Frontend',
+      date: 'Feb 1, 2025',
+      readTime: '9 min read',
+      color: '#ef4444',
+    },
+    {
+      title: 'Git Workflow for Frontend Developers',
+      excerpt: 'A practical Git workflow guide — branching strategies, commit conventions, and PR best practices.',
+      category: 'Git',
+      date: 'Jan 15, 2025',
+      readTime: '6 min read',
+      color: '#f97316',
+    },
+  ];
+
+  const NOTES = [
+    {
+      title: 'HTML5 Complete Notes',
+      desc: 'Comprehensive HTML5 notes covering semantic tags, forms, accessibility, and best practices.',
+      category: 'html-css',
+      size: '2.4 MB',
+      pages: '45 pages',
+      file: '#',
+    },
+    {
+      title: 'CSS3 & Animations Guide',
+      desc: 'In-depth CSS3 reference — Grid, Flexbox, custom properties, animations, and transitions.',
+      category: 'html-css',
+      size: '3.1 MB',
+      pages: '62 pages',
+      file: '#',
+    },
+    {
+      title: 'JavaScript Fundamentals',
+      desc: 'Core JavaScript concepts — closures, prototypes, async/await, and ES6+ features.',
+      category: 'javascript',
+      size: '4.2 MB',
+      pages: '78 pages',
+      file: '#',
+    },
+    {
+      title: 'React.js Crash Notes',
+      desc: 'Quick reference for React hooks, state management, lifecycle, and component patterns.',
+      category: 'react',
+      size: '3.8 MB',
+      pages: '55 pages',
+      file: '#',
+    },
+    {
+      title: 'Git & GitHub Handbook',
+      desc: 'Git commands, branching, merging, pull requests, and team collaboration workflows.',
+      category: 'git',
+      size: '1.9 MB',
+      pages: '32 pages',
+      file: '#',
+    },
+    {
+      title: 'JavaScript Interview Prep',
+      desc: '150+ commonly asked JavaScript interview questions with detailed explanations.',
+      category: 'javascript',
+      size: '5.1 MB',
+      pages: '92 pages',
+      file: '#',
+    },
+    {
+      title: 'React Hooks Deep Dive',
+      desc: 'Detailed guide to all React hooks — useState, useEffect, useContext, useMemo, and custom hooks.',
+      category: 'react',
+      size: '2.7 MB',
+      pages: '48 pages',
+      file: '#',
+    },
+    {
+      title: 'Responsive Design Patterns',
+      desc: 'Mobile-first design patterns, media queries, fluid typography, and layout techniques.',
+      category: 'html-css',
+      size: '2.2 MB',
+      pages: '38 pages',
+      file: '#',
+    },
+  ];
+
+  const GALLERY_COLORS = [
+    '#7c3aed','#06b6d4','#10b981','#f59e0b','#ef4444','#8b5cf6',
+    '#0891b2','#059669','#d97706','#dc2626','#7c3aed','#06b6d4',
+  ];
+
+  // ===================== RENDER =====================
+
+  function renderSkills() {
+    const grid = document.getElementById('skillsGrid');
+    grid.innerHTML = SKILLS.map((s, i) => `
+      <div class="skill-card fade-in" style="transition-delay:${i * 0.06}s">
+        <div class="skill-icon">${s.icon}</div>
+        <div class="skill-name">${s.name}</div>
+        <div class="skill-level">${s.level}</div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-pct="${s.pct}"></div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderProjects(filter = 'all') {
+    const grid = document.getElementById('projectsGrid');
+    const list = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
+    grid.innerHTML = list.map((p, i) => `
+      <div class="project-card fade-in" style="transition-delay:${i * 0.07}s">
+        <div class="project-img">
+          <div class="placeholder-img">
+            <i class="uil uil-desktop"></i>
+            <span>${p.title}</span>
+          </div>
+          <div class="project-overlay">
+            <a href="${p.demo}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              <i class="uil uil-eye"></i> Demo
+            </a>
+            <a href="${p.github}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            ${p.tags.map(t => `<span class="badge">${t}</span>`).join('')}
+          </div>
+          <div class="project-title">${p.title}</div>
+          <div class="project-desc">${p.desc}</div>
+          <div class="project-footer">
+            <div class="project-links">
+              <a href="${p.demo}" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                <i class="uil uil-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+            <a href="${p.github}" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    observeFadeIns();
+  }
+
+  function renderBlogs() {
+    const grid = document.getElementById('blogsGrid');
+    grid.innerHTML = BLOGS.map((b, i) => `
+      <div class="blog-card fade-in" style="transition-delay:${i * 0.08}s">
+        <div class="blog-img">
+          <div class="placeholder-img" style="background:linear-gradient(135deg, ${b.color}22, ${b.color}08);">
+            <i class="uil uil-newspaper" style="color:${b.color};font-size:40px;"></i>
+          </div>
+          <span class="blog-cat-badge">${b.category}</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span><i class="uil uil-calendar-alt"></i> ${b.date}</span>
+            <span><i class="uil uil-clock"></i> ${b.readTime}</span>
+          </div>
+          <div class="blog-title">${b.title}</div>
+          <div class="blog-excerpt">${b.excerpt}</div>
+          <div class="blog-footer">
+            <a href="#" class="read-more">Read More <i class="uil uil-arrow-right"></i></a>
+            <span class="badge">${b.category}</span>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    observeFadeIns();
+  }
+
+  function renderNotes(filter = 'all') {
+    const grid = document.getElementById('notesGrid');
+    const list = filter === 'all' ? NOTES : NOTES.filter(n => n.category === filter);
+    grid.innerHTML = list.map((n, i) => `
+      <div class="note-card fade-in" style="transition-delay:${i * 0.07}s">
+        <div class="note-icon"><i class="fas fa-file-pdf"></i></div>
+        <div class="note-title">${n.title}</div>
+        <div class="note-desc">${n.desc}</div>
+        <div class="note-footer">
+          <div class="note-size"><i class="uil uil-file-alt"></i> ${n.pages} · ${n.size}</div>
+          <a href="${n.file}" download class="btn btn-primary btn-sm">
+            <i class="uil uil-download-alt"></i> Download
+          </a>
+        </div>
+      </div>
+    `).join('');
+    observeFadeIns();
+  }
+
+  function renderGallery() {
+    const grid = document.getElementById('galleryGrid');
+    const items = Array.from({length: 12}, (_, i) => ({
+      color: GALLERY_COLORS[i],
+      label: `Project ${i + 1}`,
+      aspect: i % 3 === 0 ? 'tall' : i % 3 === 1 ? 'wide' : 'square',
+    }));
+    grid.innerHTML = items.map((g, i) => `
+      <div class="gallery-item fade-in" style="transition-delay:${i * 0.05}s" data-src="placeholder">
+        <div class="placeholder-img" style="height:${g.aspect === 'tall' ? 280 : g.aspect === 'wide' ? 160 : 200}px;background:linear-gradient(135deg,${g.color}33,${g.color}11);">
+          <i class="uil uil-image" style="color:${g.color};font-size:36px;"></i>
+          <span style="color:${g.color}88;">${g.label}</span>
+        </div>
+        <div class="gallery-overlay">
+          <i class="uil uil-expand-arrows-alt"></i>
+        </div>
+      </div>
+    `).join('');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        openLightbox(item.querySelector('.placeholder-img'));
+      });
+    });
+    observeFadeIns();
+  }
+
+  function openLightbox(elem) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    img.style.display = 'none';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', () => {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  document.getElementById('lightbox').addEventListener('click', e => {
+    if (e.target === e.currentTarget) {
+      e.currentTarget.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // ===================== TYPED.JS =====================
+  new Typed('#heroTyped', {
+    strings: ['Frontend Developer', 'React Developer', 'UI/UX Enthusiast', 'Web Designer'],
+    typeSpeed: 65,
+    backSpeed: 40,
+    loop: true,
+    backDelay: 1800,
+  });
+
+  // ===================== NAVBAR =====================
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+
+    // scroll progress
+    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('scrollProgress').style.width = scrolled + '%';
+
+    // back to top
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+
+    // active nav link
+    const sections = document.querySelectorAll('section[id]');
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // ===================== HAMBURGER =====================
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+
+  function closeMobileNav() {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (!navbar.contains(e.target) && !mobileNav.contains(e.target)) closeMobileNav();
+  });
+
+  // ===================== THEME TOGGLE =====================
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    document.body.classList.add('light-mode');
+    themeIcon.className = 'uil uil-sun';
+  }
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    themeIcon.className = isLight ? 'uil uil-sun' : 'uil uil-moon';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+
+  // ===================== FILTER =====================
+  document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProjects(btn.dataset.filter);
+    });
+  });
+
+  document.querySelectorAll('.filter-btn[data-nfilter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn[data-nfilter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderNotes(btn.dataset.nfilter);
+    });
+  });
+
+  // ===================== COUNTER ANIMATION =====================
+  function animateCounters() {
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const target = parseInt(el.dataset.count);
+      let current = 0;
+      const step = Math.ceil(target / 40);
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current + '+';
+        if (current >= target) clearInterval(timer);
+      }, 40);
+    });
+  }
+
+  // ===================== SKILL BARS =====================
+  function animateSkillBars() {
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.pct + '%';
+    });
+  }
+
+  // ===================== INTERSECTION OBSERVER =====================
+  function observeFadeIns() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+
+          // Trigger counters when hero stats visible
+          if (entry.target.closest('#home')) animateCounters();
+          // Trigger skill bars when skills visible
+          if (entry.target.closest('#skills')) animateSkillBars();
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(el => observer.observe(el));
+  }
+
+  // ===================== CONTACT FORM =====================
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('inputName').value.trim();
+    const email = document.getElementById('inputEmail').value.trim();
+    const subject = document.getElementById('inputSubject').value.trim();
+    const message = document.getElementById('inputMessage').value.trim();
+    const status = document.getElementById('formStatus');
+
+    if (!name || !email || !message) {
+      status.textContent = 'Please fill in all required fields.';
+      status.className = 'form-status error';
+      return;
+    }
+
+    const text = `Hello, my name is ${name}.\nEmail: ${email}${subject ? '\nSubject: ' + subject : ''}\n\nMessage:\n${message}`;
+    const url = `https://wa.me/9779811639830?text=${encodeURIComponent(text)}`;
+
+    status.textContent = 'Opening WhatsApp...';
+    status.className = 'form-status success';
+    window.open(url, '_blank');
+
+    setTimeout(() => {
+      this.reset();
+      status.className = 'form-status';
+      status.textContent = '';
+    }, 3000);
+  });
+
+  // ===================== CURSOR =====================
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
+  });
+
+  (function animateRing() {
+    rx += (mx - rx - 16) * 0.12;
+    ry += (my - ry - 16) * 0.12;
+    ring.style.transform = `translate(${rx}px, ${ry}px)`;
+    requestAnimationFrame(animateRing);
+  })();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => { ring.style.width = '50px'; ring.style.height = '50px'; ring.style.borderColor = 'rgba(124,58,237,0.8)'; });
+    el.addEventListener('mouseleave', () => { ring.style.width = '32px'; ring.style.height = '32px'; ring.style.borderColor = 'rgba(124,58,237,0.5)'; });
+  });
+
+  // ===================== INIT =====================
+  renderSkills();
+  renderProjects();
+  renderBlogs();
+  renderNotes();
+  renderGallery();
+  observeFadeIns();
+  </script>
 </body>
 </html>
-
-
