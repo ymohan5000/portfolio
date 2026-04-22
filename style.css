@@ -716,8 +716,8 @@ body.light-mode .mobile-nav {
 
 .hero-img-ring {
   position: relative;
-  width: 360px;
-  height: 360px;
+  width: 480px;
+  height: 480px;
 }
 /* Removed spinning rings pseudo-elements */
 
@@ -2048,8 +2048,8 @@ body.light-mode .mobile-nav {
   }
 
   .hero-img-ring {
-    width: 280px;
-    height: 280px;
+    width: 360px;
+    height: 360px;
   }
 
   .hero-img-badge-1 {
@@ -2139,8 +2139,8 @@ body.light-mode .mobile-nav {
   }
 
   .hero-img-ring {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 280px;
   }
 
   .hero-img-badge {
