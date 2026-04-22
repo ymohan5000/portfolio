@@ -167,7 +167,7 @@
               </div>
               <div class="hero-img-badge hero-img-badge-2">
                 <i class="uil uil-map-marker" style="color:var(--accent-2);"></i>
-                Nepal 🇳🇵
+                Butwal, Nepal 🇳🇵
               </div>
             </div>
           </div>
@@ -228,7 +228,7 @@
                 <div class="about-item-icon"><i class="uil uil-map-marker"></i></div>
                 <div class="about-item-text">
                   <strong>Location</strong>
-                  <span>Nepal 🇳🇵</span>
+                  <span>Butwal, Nepal 🇳🇵</span>
                 </div>
               </div>
               <div class="about-item">
@@ -416,7 +416,7 @@
                 <div class="contact-item-icon"><i class="uil uil-map-marker"></i></div>
                 <div>
                   <div class="contact-item-label">Location</div>
-                  <div class="contact-item-value">Nepal 🇳🇵</div>
+                  <div class="contact-item-value">Butwal, Nepal 🇳🇵</div>
                 </div>
               </div>
               <div class="contact-item">
@@ -549,6 +549,11 @@
   <!-- Typed.js -->
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
+  <!-- Blog Data & Functions -->
+  <script src="blogs.js"></script>
+  <script src="blog-content.js"></script>
+  <script src="blog-render.js"></script>
+
   <!-- ============================================================
        MAIN JS
   ============================================================ -->
@@ -636,56 +641,7 @@
     },
   ];
 
-  const BLOGS = [
-    {
-      title: 'Getting Started with React.js in 2025',
-      excerpt: 'A comprehensive guide to starting your React journey — from setup with Vite to building your first component.',
-      category: 'React',
-      date: 'Apr 10, 2025',
-      readTime: '8 min read',
-      color: '#06b6d4',
-    },
-    {
-      title: 'Mastering CSS Grid & Flexbox',
-      excerpt: 'Deep dive into CSS layout systems — when to use Grid vs Flexbox and how to combine both for complex layouts.',
-      category: 'CSS',
-      date: 'Mar 22, 2025',
-      readTime: '6 min read',
-      color: '#7c3aed',
-    },
-    {
-      title: 'JavaScript ES2024 — New Features',
-      excerpt: 'Explore the latest JavaScript features including Array grouping, Promise.withResolvers, and more.',
-      category: 'JavaScript',
-      date: 'Mar 5, 2025',
-      readTime: '7 min read',
-      color: '#f59e0b',
-    },
-    {
-      title: 'Tailwind CSS Best Practices',
-      excerpt: 'How to organize your Tailwind classes, create reusable components, and avoid common pitfalls.',
-      category: 'CSS',
-      date: 'Feb 18, 2025',
-      readTime: '5 min read',
-      color: '#10b981',
-    },
-    {
-      title: 'Building a Portfolio That Gets Hired',
-      excerpt: 'What recruiters look for in a developer portfolio and how to structure yours to stand out.',
-      category: 'Frontend',
-      date: 'Feb 1, 2025',
-      readTime: '9 min read',
-      color: '#ef4444',
-    },
-    {
-      title: 'Git Workflow for Frontend Developers',
-      excerpt: 'A practical Git workflow guide — branching strategies, commit conventions, and PR best practices.',
-      category: 'Git',
-      date: 'Jan 15, 2025',
-      readTime: '6 min read',
-      color: '#f97316',
-    },
-  ];
+  // BLOGS data loaded from blogs.js
 
   const NOTES = [
     {
@@ -981,13 +937,19 @@
   const NOTES_PER_PAGE = 10;
 
   const JERNY_IMAGES = [
-    "1732785416242.jpg", "20240921_143408.jpg", "DSC_7844.jpg", "DSC_7891.jpg",
-    "DSC_7981.jpg", "DSC_8005.jpg", "FB_IMG_17176479559650064.jpg", "FB_IMG_17215732107394324.jpg",
-    "IMG-20221209-WA0004.jpg", "IMG-20230529-WA0004.jpg", "IMG-20240411-WA0036.jpg", "IMG-20241205-WA0067.jpg",
-    "IMG-20241205-WA0075.jpg", "IMG-20241205-WA0105.jpg", "IMG-20260421-WA0010.jpg", "IMG20241029133324.jpg",
-    "IMG20241029155051.jpg", "IMG20241029155055.jpg", "IMG20241117104122.jpg", "IMG20241118085304.jpg",
-    "IMG20241127101505.jpg", "IMG20250303001615.jpg", "IMG_20241126_070840.jpg", "IMG_20241126_072132.jpg",
-    "IMG_20241126_082546.jpg", "IMG_20241126_082825.jpg", "IMG_20250330_174743_555.jpg", "IMG_20250330_175458_601.jpg"
+    "1732785416242.jpg", "1770614717108.jpg", "1770614843367.jpg", "20240921_143408.jpg",
+    "DSC_7844.jpg", "DSC_7891.jpg", "DSC_7981.jpg", "DSC_8005.jpg",
+    "FB_IMG_17176479559650064.jpg", "FB_IMG_17215732107394324.jpg",
+    "IMG-20221209-WA0004.jpg", "IMG-20230529-WA0004.jpg", "IMG-20240411-WA0036.jpg",
+    "IMG-20241205-WA0067.jpg", "IMG-20241205-WA0075.jpg", "IMG-20241205-WA0105.jpg",
+    "IMG-20251224-WA0040.jpg", "IMG-20260123-WA0004.jpg", "IMG-20260123-WA0020.jpg",
+    "IMG-20260123-WA0025.jpg", "IMG-20260207-WA0078.jpg", "IMG-20260207-WA0090.jpg",
+    "IMG-20260207-WA0092.jpg", "IMG-20260210-WA0002.jpg", "IMG-20260210-WA0011.jpg",
+    "IMG-20260212-WA0005.jpg", "IMG-20260421-WA0010.jpg", "IMG20241029133324.jpg",
+    "IMG20241117104122.jpg", "IMG20250303001615.jpg", "IMG_20250330_174743_555.jpg",
+    "IMG_20260208_110902_099.jpg", "IMG_20260208_160633_875.jpg", "IMG_20260213_114938_177.jpg",
+    "IMG_20260215_100027_314.jpg", "IMG_20260224_102050_312.jpg", "IMG_20260224_130723_438.jpg",
+    "IMG_3122.JPG", "IMG_3205.JPG", "IMG_3272.JPG"
   ];
 
   const GALLERY_COLORS = [
@@ -1042,32 +1004,7 @@
     observeFadeIns();
   }
 
-  function renderBlogs() {
-    const grid = document.getElementById('blogsGrid');
-    grid.innerHTML = BLOGS.map((b, i) => `
-      <div class="blog-card fade-in" style="transition-delay:${i * 0.08}s">
-        <div class="blog-img">
-          <div class="placeholder-img" style="background:linear-gradient(135deg, ${b.color}22, ${b.color}08);">
-            <i class="uil uil-newspaper" style="color:${b.color};font-size:40px;"></i>
-          </div>
-          <span class="blog-cat-badge">${b.category}</span>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span><i class="uil uil-calendar-alt"></i> ${b.date}</span>
-            <span><i class="uil uil-clock"></i> ${b.readTime}</span>
-          </div>
-          <div class="blog-title">${b.title}</div>
-          <div class="blog-excerpt">${b.excerpt}</div>
-          <div class="blog-footer">
-            <a href="#" class="read-more">Read More <i class="uil uil-arrow-right"></i></a>
-            <span class="badge">${b.category}</span>
-          </div>
-        </div>
-      </div>
-    `).join('');
-    observeFadeIns();
-  }
+  // renderBlogs loaded from blog-render.js
 
   let notesShowAll = false;
   let currentNotesFilter = 'all';
@@ -1151,7 +1088,7 @@
 
     grid.innerHTML = list.map((img, i) => `
       <div class="gallery-item fade-in" style="transition-delay:${(i % 10) * 0.05}s">
-        <img src="jernyimg/${img}" alt="Gallery image ${i + 1}" loading="lazy">
+        <img src="jernyimg/${img}" alt="Gallery image ${i + 1}" loading="lazy" onerror="this.parentElement.style.display='none'">
         <div class="gallery-overlay">
           <i class="uil uil-expand-arrows-alt"></i>
         </div>
